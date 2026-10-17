@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>Misi Dibalik Jatuhnya Hadiah Panjat Pinang</title>
+<style>
+:root{--cream:#fbf3dc;--paper:#fffdf6;--line:#d9c79a;--ink:#2b2118;--green:#2e6b3a;--gd:#1f4d2a;--brown:#6b4423;--red:#b71c1c;--ep:#1f7a3a;--ek:#c62828;--em:#8a5a1b}
+*{box-sizing:border-box}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);color-scheme:light}
+body{margin:0;background:var(--cream);color:var(--ink);font:17px/1.55 "Nunito","Segoe UI",Verdana,sans-serif}
+header{background:var(--gd);color:#fff;border-bottom:8px solid transparent;border-image:repeating-linear-gradient(90deg,#c62828 0 40px,#fff 40px 80px) 8;padding:22px 16px}
+.hd,.wrap{max-width:1180px;margin:0 auto}
+header p{margin:0}
+h1{font-size:clamp(1.6rem,4.5vw,2.5rem);line-height:1.2;margin:4px 0 6px}
+.sub{font-size:1.1rem;color:#f3e9c6}
+.wrap{padding:16px}
+h2{font-size:1.25rem;margin:0 0 10px;color:var(--gd)}
+.card{background:var(--paper);border:2px solid var(--line);border-radius:16px;padding:16px;margin-bottom:16px}
+.layout{display:grid;gap:16px}
+@media(min-width:960px){.layout{grid-template-columns:minmax(320px,440px) 1fr}}
+ol,ul{margin:0;padding-left:22px}
+svg{width:100%;height:auto;max-height:82vh;display:block;border-radius:12px}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px}
+.btn{min-height:46px;padding:10px 18px;border:2px solid var(--brown);border-radius:12px;background:#fff;color:var(--brown);font:700 1rem inherit;cursor:pointer}
+.btn.pri{background:var(--green);border-color:var(--gd);color:#fff}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+:focus-visible{outline:3px solid #1a237e;outline-offset:2px}
+label{display:block;font-weight:700;margin-top:10px}
+input[type=range]{width:100%;accent-color:var(--green);height:32px}
+select{width:100%;min-height:44px;font:inherit;border:2px solid var(--brown);border-radius:10px;padding:6px;background:#fff}
+#status{margin:10px 0 0;padding:8px 12px;background:#eef5e6;border-left:6px solid var(--green);border-radius:6px;min-height:44px}
+.ind{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;text-align:center}
+.ind div{background:#fff;border:2px solid var(--line);border-radius:12px;padding:8px}
+.ind b{display:block;font-size:1.5rem;color:var(--gd)}
+.ind span{font-size:.9rem}
+.bar{margin:10px 0}
+.bar .top{display:flex;justify-content:space-between;gap:8px;font-weight:700}
+.track{height:26px;background:#eadfc0;border:2px solid var(--brown);border-radius:8px;overflow:hidden}
+.fill{height:100%;width:0}
+#fEp{background:var(--ep)}
+#fEk{background:repeating-linear-gradient(45deg,var(--ek) 0 8px,#e57373 8px 14px)}
+#fEm{background:var(--em)}
+.badge{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;background:var(--red);color:#fff;font-weight:800;font-size:1.3rem;margin-right:8px}
+.mode{font-size:.95rem;color:#5a4630;margin:4px 0 8px}
+.eq{background:#fff;border:2px dashed var(--brown);border-radius:10px;padding:8px 12px;font:700 1rem/1.6 "Courier New",monospace;overflow-wrap:anywhere}
+table{width:100%;border-collapse:collapse;margin:10px 0}
+th,td{border:1px solid var(--line);padding:6px 8px;text-align:left}
+th{background:#f1e6c4}
+.pos{display:grid;gap:12px}
+@media(min-width:720px){.pos{grid-template-columns:repeat(3,1fr)}}
+.pc{text-align:left;background:#fff;border:3px solid var(--line);border-radius:14px;padding:12px;font:inherit;color:var(--ink);cursor:pointer}
+.pc.on{border-color:var(--red);background:#fff1ee}
+.pc[aria-pressed=true]{box-shadow:0 0 0 3px var(--gd)}
+.pc small{display:block}
+canvas{width:100%;display:block;background:#fff;border:2px solid var(--line);border-radius:12px}
+.leg{display:flex;flex-wrap:wrap;gap:6px 18px;margin:8px 0;font-weight:700}
+.leg i{display:inline-block;width:34px;height:0;border-top:4px solid;vertical-align:middle;margin-right:6px}
+.mk{cursor:pointer}
+.bob{animation:bob 1.8s ease-in-out infinite alternate}
+@keyframes bob{to{transform:translateY(-4px)}}
+.mk circle{fill:#fff;stroke:#6b4423;stroke-width:3}
+.mk.on circle{fill:#ffd54f;stroke:#b71c1c;stroke-width:5}
+.mk text{font-family:inherit;fill:#2b2118}
+.ml{font-size:20px;font-weight:800;text-anchor:middle}
+.mt{font-size:14px;font-weight:700}
+.mk:focus-visible circle{stroke:#1a237e;stroke-width:6}
+fieldset{border:2px solid var(--line);border-radius:12px;margin:0 0 12px;padding:10px 14px}
+legend{font-weight:700;padding:0 6px}
+.opt{display:block;font-weight:400;margin:4px 0;padding:6px;border-radius:8px}
+.opt input{width:20px;height:20px;margin-right:8px;vertical-align:middle}
+.fb{margin:6px 0 0;font-weight:700}
+.note{background:#fff8e1;border-left:6px solid #f9a825;padding:8px 12px;border-radius:6px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header><div class="hd">
+<p>IPA Kelas VIII — Energi Potensial, Energi Kinetik, dan Energi Mekanik</p>
+<h1>Misi Dibalik Jatuhnya Hadiah Panjat Pinang</h1>
+<p class="sub">Amati perubahan energi saat hadiah jatuh dari puncak batang pinang!</p>
+</div></header>
+<main class="wrap">
+
+<section class="card" aria-labelledby="tj">
+<h2 id="tj">Tujuan Pembelajaran</h2>
+<ol>
+<li>Menjelaskan perubahan energi potensial gravitasi menjadi energi kinetik ketika hadiah jatuh.</li>
+<li>Menganalisis hubungan ketinggian, kecepatan, massa, dan energi benda.</li>
+<li>Menjelaskan hubungan energi potensial, energi kinetik, dan energi mekanik melalui simulasi.</li>
+</ol>
+</section>
+
+<div class="layout">
+<section class="card" aria-labelledby="sc">
+<h2 id="sc">Batang Pinang dan Lintasan Jatuh</h2>
+<svg id="scene" viewBox="0 0 420 540" role="img" aria-label="Ilustrasi batang pinang. Hadiah jatuh lurus ke bawah dari puncak. Posisi A di puncak, B di tengah lintasan, C tepat di tanah. Beberapa orang memanjat batang, dan satu orang di puncak melepas hadiah.">
+<defs>
+<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bfe3f5"/><stop offset="1" stop-color="#fff4d2"/></linearGradient>
+<pattern id="bark" width="24" height="46" patternUnits="userSpaceOnUse"><rect width="24" height="46" fill="#8a5a2b"/><rect y="0" width="24" height="7" fill="#5e3a1a"/><rect x="4" y="16" width="3" height="20" fill="#a8743d"/></pattern>
+</defs>
+<rect width="420" height="540" fill="url(#sky)"/>
+<line x1="0" y1="32" x2="420" y2="32" stroke="#6b4423" stroke-width="2"/>
+<g id="bunt"></g>
+<line x1="34" y1="80" x2="34" y2="500" stroke="#5a4630" stroke-width="4"/>
+<rect x="34" y="80" width="56" height="13" fill="#d32f2f"/><rect x="34" y="93" width="56" height="13" fill="#fff" stroke="#999"/>
+<line x1="130" y1="120" x2="130" y2="500" stroke="#6b4423" stroke-width="2"/>
+<g stroke="#6b4423" stroke-width="2"><line x1="125" y1="120" x2="135" y2="120"/><line x1="125" y1="310" x2="135" y2="310"/><line x1="125" y1="500" x2="135" y2="500"/></g>
+<g font-size="14" font-weight="700" text-anchor="end" fill="#2b2118"><text id="rA" x="122" y="125"></text><text id="rB" x="122" y="315"></text><text id="rC" x="122" y="495">0 m</text></g>
+<rect x="168" y="120" width="24" height="380" fill="url(#bark)" stroke="#4a2c10" stroke-width="2"/>
+<rect x="164" y="120" width="78" height="9" rx="3" fill="#4a2c10"/>
+<line x1="215" y1="120" x2="215" y2="500" stroke="#b71c1c" stroke-width="2" stroke-dasharray="6 6"/>
+<rect x="0" y="500" width="420" height="10" fill="#4f9a4a"/><rect x="0" y="510" width="420" height="30" fill="#6b4423"/>
+<line x1="0" y1="500" x2="420" y2="500" stroke="#b71c1c" stroke-width="3" stroke-dasharray="10 6"/>
+<text x="210" y="530" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">Tanah: h = 0 m, Ep = 0 J (acuan)</text>
+<g id="crowd"></g>
+<g id="topP" transform="translate(186 94)">
+<path d="M-3 0V26M3 0V26" stroke="#1f4d8a" stroke-width="6" stroke-linecap="round"/>
+<g id="armL" transform="rotate(0 -2 -18)"><line x1="-2" y1="-18" x2="-10" y2="2" stroke="#c68642" stroke-width="5" stroke-linecap="round"/><circle cx="-10" cy="2" r="3.5" fill="#c68642"/></g>
+<rect x="-7" y="-22" width="14" height="23" rx="5" fill="#d32f2f" stroke="#7f1313"/>
+<circle cx="0" cy="-30" r="8.5" fill="#c68642"/>
+<path d="M-8.5 -31A8.5 8.5 0 0 1 8.5 -31Z" fill="#fff" stroke="#999"/>
+<g id="armR" transform="rotate(0 2 -18)"><line x1="2" y1="-18" x2="10" y2="2" stroke="#c68642" stroke-width="5" stroke-linecap="round"/><circle cx="10" cy="2" r="3.5" fill="#c68642"/></g>
+</g>
+<g id="mA" class="mk" tabindex="0" role="button" aria-label="Posisi A, puncak. Tekan untuk melihat penjelasan"><line x1="233" y1="120" x2="274" y2="120" stroke="#6b4423" stroke-dasharray="4 3"/><circle cx="292" cy="120" r="17"/><text class="ml" x="292" y="127">A</text><text class="mt" x="316" y="125">Puncak</text></g>
+<g id="mB" class="mk" tabindex="0" role="button" aria-label="Posisi B, tengah lintasan. Tekan untuk melihat penjelasan"><line x1="233" y1="310" x2="274" y2="310" stroke="#6b4423" stroke-dasharray="4 3"/><circle cx="292" cy="310" r="17"/><text class="ml" x="292" y="317">B</text><text class="mt" x="316" y="315">Tengah</text></g>
+<g id="mC" class="mk" tabindex="0" role="button" aria-label="Posisi C, tepat di tanah. Tekan untuk melihat penjelasan"><line x1="233" y1="500" x2="274" y2="500" stroke="#6b4423" stroke-dasharray="4 3"/><circle cx="292" cy="500" r="17"/><text class="ml" x="292" y="507">C</text><text class="mt" x="316" y="494">Di tanah</text></g>
+<g id="prize"><g stroke="#4a0f0f" stroke-width="2"><rect x="-16" y="-16" width="32" height="32" rx="5" fill="#d32f2f"/><rect x="-4" y="-16" width="8" height="32" fill="#fff"/><rect x="-16" y="-4" width="32" height="8" fill="#fff"/><path d="M0 -16 C-14 -30 -14 -16 0 -16 C14 -30 14 -16 0 -16Z" fill="#fff"/></g></g>
+</svg>
+<p class="note">Ruler di kiri menunjukkan ketinggian dasar hadiah dari tanah. Garis putus-putus merah adalah lintasan jatuh hadiah. Pemanjat di puncak melepas hadiah saat tombol “Mulai Jatuh” ditekan.</p>
+</section>
+
+<div>
+<section class="card" aria-labelledby="kt">
+<h2 id="kt">Kontrol Simulasi</h2>
+<div class="btns">
+<button class="btn pri" id="bStart" type="button">Mulai Jatuh</button>
+<button class="btn" id="bPause" type="button" disabled>Jeda/Lanjutkan</button>
+<button class="btn" id="bReset" type="button">Ulangi</button>
+</div>
+<label for="sH">Ketinggian Awal: <output id="oH" for="sH">10</output> m</label>
+<input id="sH" type="range" min="2" max="10" step="0.5" value="10">
+<label for="sM">Massa Hadiah: <output id="oM" for="sM">2</output> kg</label>
+<input id="sM" type="range" min="1" max="5" step="0.5" value="2">
+<label for="sR">Kecepatan animasi (waktu simulasi diperlambat agar mudah diamati)</label>
+<select id="sR"><option value="0.25" selected>Gerak lambat ¼×</option><option value="0.5">Gerak lambat ½×</option><option value="1">Waktu sebenarnya 1×</option></select>
+<p id="status" role="status" aria-live="polite">Tekan “Mulai Jatuh” untuk menjatuhkan hadiah dari posisi A.</p>
+</section>
+
+<section class="card" aria-labelledby="in">
+<h2 id="in">Indikator</h2>
+<div class="ind">
+<div><span>Ketinggian Saat Ini</span><b id="iH">0</b><span>meter (m)</span></div>
+<div><span>Kecepatan Saat Ini</span><b id="iV">0</b><span>m/s</span></div>
+<div><span>Waktu Simulasi</span><b id="iT">0</b><span>detik (s)</span></div>
+</div>
+</section>
+</div>
+</div>
+
+<section class="card" aria-labelledby="en">
+<h2 id="en">Indikator Energi</h2>
+<div class="bar"><div class="top"><span>Ep — Energi Potensial Gravitasi</span><span id="vEp">0 J</span></div><div class="track"><div class="fill" id="fEp" role="progressbar" aria-label="Energi potensial gravitasi" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div></div></div>
+<div class="bar"><div class="top"><span>Ek — Energi Kinetik</span><span id="vEk">0 J</span></div><div class="track"><div class="fill" id="fEk" role="progressbar" aria-label="Energi kinetik" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div></div></div>
+<div class="bar"><div class="top"><span>Em — Energi Mekanik (Ep + Ek)</span><span id="vEm">0 J</span></div><div class="track"><div class="fill" id="fEm" role="progressbar" aria-label="Energi mekanik" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div></div></div>
+<p class="note">Panjang batang dibandingkan dengan energi mekanik awal. Perhatikan: panjang batang Em selalu penuh.</p>
+</section>
+
+<section class="card" aria-labelledby="pn" id="infoCard">
+<h2 id="pn">Keterangan Posisi</h2>
+<p class="mode" id="iMode"></p>
+<p><span class="badge" id="iBadge">A</span><strong id="iTitle"></strong></p>
+<p id="iText"></p>
+<ul id="iList"></ul>
+<p class="eq" id="iEq1"></p>
+<p class="eq" id="iEq2"></p>
+<table><caption class="mode">Nilai pada posisi yang ditampilkan</caption>
+<tr><th>Ketinggian (h)</th><td id="tH"></td><th>Kecepatan (v)</th><td id="tV"></td></tr>
+<tr><th>Ep</th><td id="tEp"></td><th>Ek</th><td id="tEk"></td></tr>
+<tr><th>Em</th><td id="tEm" colspan="3"></td></tr></table>
+<button class="btn" id="bUnpin" type="button" hidden>Ikuti hadiah lagi</button>
+</section>
+
+<section class="card" aria-labelledby="pk">
+<h2 id="pk">Pilih Posisi untuk Dipelajari</h2>
+<p>Klik atau tekan Enter pada kartu ini (atau penanda A, B, C pada gambar) untuk melihat penjelasannya.</p>
+<div class="pos" id="cards"></div>
+</section>
+
+<section class="card" aria-labelledby="gf">
+<h2 id="gf">Grafik Perubahan Energi</h2>
+<canvas id="graph" role="img" aria-label="Grafik energi terhadap waktu. Ep turun dari nilai maksimum ke nol. Ek naik dari nol ke nilai maksimum. Em berupa garis datar. Posisi A, B, dan C ditandai."></canvas>
+<div class="leg"><span style="color:var(--ep)"><i style="border-color:var(--ep)"></i>Ep (menurun)</span><span style="color:var(--ek)"><i style="border-color:var(--ek)"></i>Ek (meningkat)</span><span style="color:var(--em)"><i style="border-color:var(--em);border-top-style:dashed"></i>Em (tetap)</span></div>
+<p id="gCap">Grafik terisi saat hadiah jatuh. Garis putus-putus tegak menandai waktu hadiah di posisi A, B, dan C.</p>
+</section>
+
+<section class="card" aria-labelledby="rm">
+<h2 id="rm">Rumus yang Dipakai (g = 10 m/s²)</h2>
+<ul>
+<li>Energi potensial gravitasi: Ep = m × g × h</li>
+<li>Energi kinetik: Ek = ½ × m × v²</li>
+<li>Energi mekanik: Em = Ep + Ek</li>
+<li>Kecepatan jatuh bebas dari diam: v = √(2 × g × Δh)</li>
+</ul>
+<p>Simulasi ini memakai model ideal: hadiah jatuh bebas tanpa hambatan udara, sehingga Em tetap sama.</p>
+<h2 style="margin-top:14px">Ayo Amati</h2>
+<ol>
+<li>Jatuhkan hadiah. Bagaimana Ep dan Ek berubah? Berapa jumlah keduanya?</li>
+<li>Ubah massa menjadi 1 kg lalu 5 kg. Energi apa yang berubah? Apakah kecepatan di posisi C ikut berubah?</li>
+<li>Ubah ketinggian awal menjadi 2 m lalu 10 m. Bandingkan kecepatan di posisi C.</li>
+<li>Klik posisi B. Apakah Ep selalu sama dengan Ek di B? Kapan keduanya sama besar?</li>
+</ol>
+</section>
+
+<section class="card" aria-labelledby="qz">
+<h2 id="qz">Periksa Pemahamanmu</h2>
+<div id="quiz"></div>
+<div class="btns"><button class="btn pri" id="qCheck" type="button">Periksa Jawaban</button><button class="btn" id="qReset" type="button">Ulangi Kuis</button></div>
+<p id="qScore" role="status" aria-live="polite" class="fb"></p>
+</section>
+</main>
+
+<script>
+(function(){
+"use strict";
+var G=10,XP=215;
+var $=function(i){return document.getElementById(i)};
+var S={m:2,h0:10,t:0,run:false,started:false,done:false,pin:null,last:0,rate:0.25,raf:0};
+var n1=function(x){return x.toFixed(1).replace(".",",")};
+var n2=function(x){return x.toFixed(2).replace(".",",")};
+var nn=function(x){return String(+x.toFixed(2)).replace(".",",")};
+
+var POS={
+A:{f:1,s:"Puncak",title:"Posisi A — Hadiah di Puncak Batang Pinang",
+ list:["Hadiah berada di ketinggian awal dan belum bergerak.","Energi potensial gravitasi bernilai maksimum.","Energi kinetik bernilai nol.","Energi mekanik sama dengan energi potensial gravitasi."],
+ eq:"Em = Ep + Ek = Ep + 0 = Ep",
+ text:"Pada posisi A, hadiah berada di puncak batang pinang dan belum bergerak. Energi potensial gravitasi bernilai maksimum karena ketinggiannya paling besar, sedangkan energi kinetiknya nol."},
+B:{f:0.5,s:"Tengah",title:"Posisi B — Hadiah di Tengah Lintasan",
+ list:["Hadiah sedang bergerak jatuh.","Energi potensial gravitasi berkurang.","Energi kinetik bertambah.","Energi mekanik tetap sama dengan jumlah energi potensial dan energi kinetik."],
+ eq:"Em = Ep + Ek",
+ text:"Pada posisi B, hadiah mengalami penurunan ketinggian dan peningkatan kecepatan. Energi potensial gravitasi berkurang, sedangkan energi kinetik bertambah. Jumlah keduanya tetap sama dengan energi mekanik jika hambatan udara diabaikan."},
+C:{f:0,s:"Di tanah",title:"Posisi C — Hadiah Tepat di Tanah",
+ list:["Hadiah mencapai ketinggian nol, tepat di tanah, sesaat sebelum tumbukan.","Energi potensial gravitasi bernilai nol karena tanah menjadi acuan.","Energi kinetik mencapai nilai maksimum.","Energi mekanik sama dengan energi kinetik."],
+ eq:"Em = Ep + Ek = 0 + Ek = Ek",
+ text:"Pada posisi C, hadiah berada tepat di tanah (h = 0 m), sesaat sebelum tumbukan. Energi potensial gravitasi bernilai nol, sedangkan energi kinetik mencapai maksimum. Dalam model ideal tanpa hambatan udara, energi mekanik sama dengan energi kinetik."}
+};
+var KEYS=["A","B","C"];
+
+function en(h,v){var Ep=S.m*G*h,Ek=0.5*S.m*v*v;return{Ep:Ep,Ek:Ek,Em:Ep+Ek}}
+function at(t){var T=Math.sqrt(2*S.h0/G);if(t>=T)return{h:0,v:Math.sqrt(2*G*S.h0),t:T,T:T};return{h:S.h0-0.5*G*t*t,v:G*t,t:t,T:T}}
+function pc(f){var h=S.h0*f,v=Math.sqrt(2*G*(S.h0-h));var e=en(h,v);return{h:h,v:v,Ep:e.Ep,Ek:e.Ek,Em:e.Em}}
+function say(m){$("status").textContent=m}
+
+/* ornamen */
+(function(){var s="",c;for(var i=0;i<10;i++){var x=14+i*40;c=i%2?"#fff":"#d32f2f";s+='<polygon points="'+x+',33 '+(x+32)+',33 '+(x+16)+',58" fill="'+c+'" stroke="#999" stroke-width="1"/>'}
+$("bunt").innerHTML=s})();
+
+/* pemanjat */
+function climber(x,y,sh,sk,d){return'<g transform="translate('+x+' '+y+')"><g class="bob" style="animation-delay:'+d+'s"><path d="M-2 0L8 10L4 22M2 0L12 14L10 26" fill="none" stroke="#1f4d8a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><rect x="-6" y="-22" width="12" height="23" rx="4" fill="'+sh+'" stroke="#4a2c10"/><path d="M2 -18L12 -28M2 -14L12 -6" stroke="'+sk+'" stroke-width="4" stroke-linecap="round"/><circle cx="3" cy="-30" r="8" fill="'+sk+'"/><path d="M-5 -32A8 8 0 0 1 11 -32Z" fill="#fff" stroke="#999"/></g></g>'}
+function basePerson(x,y,sh,sk){return'<g transform="translate('+x+' '+y+')"><path d="M-3 0L-4 32M3 0L4 32" stroke="#1f4d8a" stroke-width="6" stroke-linecap="round"/><rect x="-7" y="-22" width="14" height="23" rx="5" fill="'+sh+'" stroke="#4a2c10"/><path d="M3 -18L14 -32M3 -14L14 -26" stroke="'+sk+'" stroke-width="4" stroke-linecap="round"/><circle cx="3" cy="-30" r="8.5" fill="'+sk+'"/><path d="M-5 -32A8.5 8.5 0 0 1 11 -32Z" fill="#fff" stroke="#999"/></g>'}
+$("crowd").innerHTML=basePerson(154,468,"#2e8b3a","#8d5524")+climber(158,420,"#f2b705","#e0ac7e",0)+climber(158,300,"#fff","#c68642",.6)+climber(158,205,"#d32f2f","#f1c27d",1.2);
+
+/* kartu posisi */
+(function(){var h="";KEYS.forEach(function(k){h+='<button type="button" class="pc" id="c'+k+'" aria-pressed="false"><b>Posisi '+k+' — '+POS[k].s+'</b><small id="c'+k+'d"></small><small id="c'+k+'e"></small></button>'});$("cards").innerHTML=h})();
+function upCards(){KEYS.forEach(function(k){var p=pc(POS[k].f);$("c"+k+"d").textContent="h = "+nn(p.h)+" m, v = "+n2(p.v)+" m/s";$("c"+k+"e").textContent="Ep "+n1(p.Ep)+" J, Ek "+n1(p.Ek)+" J, Em "+n1(p.Em)+" J"});
+$("rA").textContent=nn(S.h0)+" m";$("rB").textContent=nn(S.h0/2)+" m"}
+
+function pin(k){S.pin=k;render()}
+KEYS.forEach(function(k){
+ $("c"+k).addEventListener("click",function(){pin(k)});
+ var m=$("m"+k);m.addEventListener("click",function(){pin(k)});
+ m.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();pin(k)}});
+});
+$("bUnpin").addEventListener("click",function(){S.pin=null;render()});
+
+/* render */
+function render(){
+ var c=at(S.t),e=en(c.h,c.v),Emax=S.m*G*S.h0,f=c.h/S.h0;
+ var near=f>0.75?"A":f>0.25?"B":"C";
+ var sc=0.8+0.1*S.m,y=500-f*380-16*sc;
+ $("prize").setAttribute("transform","translate("+XP+" "+y.toFixed(2)+") scale("+sc.toFixed(2)+")");
+ KEYS.forEach(function(k){$("m"+k).classList.toggle("on",k===near);$("c"+k).classList.toggle("on",k===near);$("c"+k).setAttribute("aria-pressed",S.pin===k?"true":"false")});
+ $("armR").setAttribute("transform","rotate("+(S.done?-128:(S.started?50*Math.min(1,S.t/0.15):0))+" 2 -18)");
+ $("armL").setAttribute("transform","rotate("+(S.done?128:0)+" -2 -18)");
+ $("iH").textContent=nn(c.h);$("iV").textContent=nn(c.v);$("iT").textContent=nn(c.t);
+ [["Ep",e.Ep],["Ek",e.Ek],["Em",e.Em]].forEach(function(a){var p=Math.max(0,Math.min(100,a[1]/Emax*100));
+  $("v"+a[0]).textContent=n1(a[1])+" J";var b=$("f"+a[0]);b.style.width=p+"%";b.setAttribute("aria-valuenow",p.toFixed(0));b.setAttribute("aria-valuetext",n1(a[1])+" joule")});
+ /* panel info */
+ var k=S.pin||near,P=POS[k],d;
+ if(S.pin){d=pc(P.f);$("iMode").textContent="Menampilkan posisi "+k+" (dipilih murid). Nilai dihitung untuk posisi ini."}
+ else{d={h:c.h,v:c.v,Ep:e.Ep,Ek:e.Ek,Em:e.Em};$("iMode").textContent="Mengikuti hadiah. Posisi terdekat saat ini: "+k+". Nilai di bawah adalah nilai saat ini."}
+ $("iBadge").textContent=k;$("iTitle").textContent=P.title;$("iText").textContent=P.text;
+ $("iList").innerHTML=P.list.map(function(x){return"<li>"+x+"</li>"}).join("");
+ $("iEq1").textContent=P.eq;
+ $("iEq2").textContent="Em = "+n1(d.Ep)+" J + "+n1(d.Ek)+" J = "+n1(d.Em)+" J";
+ $("tH").textContent=n2(d.h)+" m";$("tV").textContent=n2(d.v)+" m/s";$("tEp").textContent=n1(d.Ep)+" J";$("tEk").textContent=n1(d.Ek)+" J";$("tEm").textContent=n1(d.Em)+" J";
+ $("bUnpin").hidden=!S.pin;
+ /* tombol */
+ $("bStart").disabled=S.run;
+ $("bPause").disabled=!S.started||S.done;
+ $("bPause").textContent=!S.started?"Jeda/Lanjutkan":(S.run?"Jeda":"Lanjutkan");
+ $("gCap").textContent=S.done?"Hadiah mencapai posisi C. Grafik berhenti pada keadaan sesaat sebelum tumbukan: Ep = 0 J, Ek = Em.":"Grafik terisi saat hadiah jatuh. Garis putus-putus tegak menandai waktu hadiah di posisi A, B, dan C.";
+ drawGraph();
+}
+
+/* grafik */
+function drawGraph(){
+ var cv=$("graph"),w=cv.clientWidth||600,h=Math.max(240,Math.round(w*0.52)),d=window.devicePixelRatio||1;
+ cv.width=Math.round(w*d);cv.height=Math.round(h*d);cv.style.height=h+"px";
+ var x=cv.getContext("2d");x.setTransform(d,0,0,d,0,0);x.clearRect(0,0,w,h);
+ var L=62,R=26,Tp=30,B=46,pw=w-L-R,ph=h-Tp-B,T=Math.sqrt(2*S.h0/G),Emax=S.m*G*S.h0,tc=at(S.t).t;
+ var X=function(t){return L+t/T*pw},Y=function(v){return Tp+ph-v/Emax*ph},i;
+ x.font="13px sans-serif";x.fillStyle="#2b2118";x.lineWidth=1;
+ for(i=0;i<=4;i++){var val=Emax*i/4,yy=Y(val);x.strokeStyle="#e4d6b0";x.beginPath();x.moveTo(L,yy);x.lineTo(L+pw,yy);x.stroke();x.textAlign="right";x.fillText(val.toFixed(0),L-6,yy+4)}
+ x.textAlign="center";
+ for(i=0;i<=5;i++){var tt=T*i/5;x.fillText(nn(tt),X(tt),Tp+ph+17)}
+ x.font="bold 13px sans-serif";x.fillText("Waktu simulasi (s)",L+pw/2,h-8);
+ x.save();x.translate(14,Tp+ph/2);x.rotate(-Math.PI/2);x.fillText("Energi (J)",0,0);x.restore();
+ x.strokeStyle="#2b2118";x.lineWidth=2;x.beginPath();x.moveTo(L,Tp);x.lineTo(L,Tp+ph);x.lineTo(L+pw,Tp+ph);x.stroke();
+ [["A",0],["B",Math.sqrt(S.h0/G)],["C",T]].forEach(function(a){
+  x.setLineDash([4,4]);x.strokeStyle="#8d7b57";x.lineWidth=1.5;x.beginPath();x.moveTo(X(a[1]),Tp);x.lineTo(X(a[1]),Tp+ph);x.stroke();x.setLineDash([]);
+  x.fillStyle="#b71c1c";x.font="bold 16px sans-serif";x.textAlign="center";x.fillText(a[0],X(a[1]),Tp-8)});
+ var n=Math.max(2,Math.ceil(80*tc/T));
+ [["Ep","#1f7a3a",[]],["Ek","#c62828",[]],["Em","#8a5a1b",[9,6]]].forEach(function(c){
+  x.strokeStyle=c[1];x.lineWidth=3.5;x.setLineDash(c[2]);x.beginPath();
+  for(var k=0;k<=n;k++){var s=at(tc*k/n),e=en(s.h,s.v);var px=X(s.t),py=Y(e[c[0]]);if(k)x.lineTo(px,py);else x.moveTo(px,py)}
+  x.stroke();x.setLineDash([]);
+  var s2=at(tc),e2=en(s2.h,s2.v);x.fillStyle=c[1];x.beginPath();x.arc(X(tc),Y(e2[c[0]]),5,0,7);x.fill();
+  x.font="bold 13px sans-serif";x.textAlign=tc>T*0.85?"right":"left";x.fillText(c[0],X(tc)+(tc>T*0.85?-9:9),Y(e2[c[0]])-8)});
+}
+
+/* animasi */
+function frame(now){
+ if(!S.run)return;
+ var dt=Math.max(0,Math.min((now-S.last)/1000,0.05));S.last=now;
+ S.t+=dt*S.rate;var T=Math.sqrt(2*S.h0/G);
+ if(S.t>=T){S.t=T;S.run=false;S.done=true;var c=at(T),e=en(c.h,c.v);say("Hadiah mencapai posisi C, sesaat sebelum menyentuh tanah. Kecepatan "+n2(c.v)+" m/s. Ep = 0 J, Ek = Em = "+n1(e.Em)+" J.")}
+ render();
+ if(S.run)S.raf=requestAnimationFrame(frame);
+}
+function start(){cancelAnimationFrame(S.raf);S.t=0;S.run=true;S.started=true;S.done=false;S.last=performance.now();say("Pemanjat di puncak melepas hadiah. Hadiah mulai jatuh dari posisi A.");render();S.raf=requestAnimationFrame(frame)}
+function toggle(){
+ if(!S.started||S.done)return;
+ if(S.run){S.run=false;cancelAnimationFrame(S.raf);say("Dijeda. Ketinggian "+nn(at(S.t).h)+" m, kecepatan "+nn(at(S.t).v)+" m/s.")}
+ else{S.run=true;S.last=performance.now();say("Animasi dilanjutkan.");S.raf=requestAnimationFrame(frame)}
+ render();
+}
+function reset(){cancelAnimationFrame(S.raf);S.t=0;S.run=false;S.started=false;S.done=false;S.pin=null;say("Hadiah kembali ke posisi A. Tekan “Mulai Jatuh” untuk mencoba lagi.");upCards();render()}
+
+$("bStart").addEventListener("click",start);
+$("bPause").addEventListener("click",toggle);
+$("bReset").addEventListener("click",reset);
+$("sH").addEventListener("input",function(){S.h0=+this.value;$("oH").textContent=nn(S.h0);reset();say("Ketinggian awal diubah menjadi "+nn(S.h0)+" m. Hadiah kembali ke posisi A.")});
+$("sM").addEventListener("input",function(){S.m=+this.value;$("oM").textContent=nn(S.m);upCards();render()});
+$("sR").addEventListener("change",function(){S.rate=+this.value});
+window.addEventListener("resize",drawGraph);
+
+/* kuis */
+var Q=[
+{q:"Pada posisi A, hadiah belum bergerak. Pernyataan yang benar adalah ...",o:["Ep nol dan Ek maksimum","Ep maksimum dan Ek nol","Ep dan Ek sama besar","Em sama dengan nol"],a:1,w:"Di A hadiah paling tinggi (Ep maksimum) dan belum bergerak, sehingga v = 0 dan Ek = 0."},
+{q:"Saat hadiah jatuh dari A ke C, apa yang terjadi?",o:["Ep bertambah, Ek berkurang","Ep dan Ek sama-sama bertambah","Ep berkurang, Ek bertambah","Ep dan Ek sama-sama berkurang"],a:2,w:"Ketinggian berkurang sehingga Ep turun, sedangkan kecepatan bertambah sehingga Ek naik."},
+{q:"Hadiah bermassa 2 kg berada pada ketinggian 5 m (g = 10 m/s²). Energi potensialnya adalah ...",o:["10 J","50 J","100 J","200 J"],a:2,w:"Ep = m × g × h = 2 × 10 × 5 = 100 J."},
+{q:"Jika hambatan udara diabaikan, energi mekanik hadiah selama jatuh ...",o:["tetap sama","terus bertambah","terus berkurang","menjadi nol di posisi B"],a:0,w:"Ep yang berkurang berubah menjadi Ek, sehingga jumlah Ep + Ek tetap."},
+{q:"Di posisi C (sesaat sebelum menyentuh tanah), energi mekanik sama dengan ...",o:["Ep saja","Ek saja","nol","Ep × Ek"],a:1,w:"Di C tinggi hadiah nol sehingga Ep = 0. Maka Em = 0 + Ek = Ek."}];
+var qb=$("quiz");
+function buildQuiz(){qb.innerHTML="";Q.forEach(function(q,i){var f=document.createElement("fieldset");
+ f.innerHTML="<legend>"+(i+1)+". "+q.q+"</legend>"+q.o.map(function(o,j){return'<label class="opt"><input type="radio" name="q'+i+'" value="'+j+'"> '+o+"</label>"}).join("")+'<p class="fb" id="fb'+i+'"></p>';qb.appendChild(f)});$("qScore").textContent=""}
+buildQuiz();
+$("qCheck").addEventListener("click",function(){var sc=0;
+ Q.forEach(function(q,i){var r=document.querySelector('input[name="q'+i+'"]:checked'),fb=$("fb"+i);
+  if(!r){fb.textContent="Belum dijawab. Pilih satu jawaban.";return}
+  if(+r.value===q.a){sc++;fb.textContent="✔ Benar. "+q.w}
+  else fb.textContent="✘ Belum tepat. Jawaban yang benar: "+q.o[q.a]+". "+q.w});
+ $("qScore").textContent="Skor kamu: "+sc+" dari "+Q.length+"."+(sc===Q.length?" Hebat, kamu sudah memahami konsepnya!":" Coba amati lagi simulasi, lalu periksa kembali.")});
+$("qReset").addEventListener("click",buildQuiz);
+
+reset();
+})();
+</script>
+</body>
+</html>
